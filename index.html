@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a22" />
+  <title>Teapot's Revenge — Steam & Steel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="Teapot's Revenge action platform game">
+    <canvas id="game" width="480" height="270" aria-label="Game screen"></canvas>
+    <div id="vignette"></div>
+    <section id="title-screen" class="screen visible">
+      <div class="title-mark"><span class="eyebrow">A STEAM-POWERED ADVENTURE</span><h1>TEAPOT'S<br><em>REVENGE</em></h1><p class="subtitle">A brave little pot. A very big grudge.</p></div>
+      <div class="menu-card">
+        <p class="story">The Sugar Crown has boiled the wilds dry.<br>Find the five relics. Put the kettle back on.</p>
+        <button id="play-button" class="primary-button">▶ &nbsp; BEGIN ADVENTURE</button>
+        <div class="title-controls"><span>MOVE <b>A / D</b></span><span>JUMP <b>SPACE</b></span><span>FIRE <b>J</b></span><span>SWITCH <b>Q / E</b></span></div>
+        <p class="touch-hint">Touch controls appear in-game · Best with sound on</p>
+      </div>
+      <div class="title-stamp">VOL. 01<br><strong>THE<br>BOILED<br>WILDS</strong></div>
+    </section>
+    <section id="world-screen" class="screen">
+      <header class="world-header"><span class="eyebrow">CHOOSE YOUR NEXT BREW</span><h2>THE FIVE WILDS</h2><p>Every road leads to the Sugar Crown.</p></header>
+      <div id="world-list" class="world-list"></div>
+      <button id="back-title" class="text-button">← TITLE SCREEN</button>
+    </section>
+    <section id="pause-screen" class="screen compact-screen"><div class="modal-card"><span class="eyebrow">TAKE A BREATHER</span><h2>PAUSED</h2><p>The wilds can wait.</p><button id="resume-button" class="primary-button">RESUME</button><button id="quit-button" class="text-button">WORLD SELECT</button></div></section>
+    <section id="result-screen" class="screen compact-screen"><div class="modal-card"><span class="eyebrow" id="result-eyebrow">RELIC RECOVERED</span><h2 id="result-title">A FINE BREW!</h2><p id="result-copy">The forest is breathing again.</p><div class="result-stats" id="result-stats"></div><button id="result-button" class="primary-button">CONTINUE</button></div></section>
+    <div id="hud" class="hud hidden">
+      <div class="hud-top"><div class="brand-chip">TR <span>STEAM &amp; STEEL</span></div><div class="world-label"><small>NOW EXPLORING</small><b id="hud-world">THE LOST TEA FOREST</b></div><button id="pause-button" class="icon-button" aria-label="Pause">Ⅱ</button></div>
+      <div class="hud-bottom"><div class="vitals"><div class="meter-label"><span>VITALITY</span><span id="hp-text">5 / 5</span></div><div class="health-track"><div id="health-fill"></div></div><div class="meter-label steam-label"><span>STEAM</span><span id="steam-text">0%</span></div><div class="steam-track"><div id="steam-fill"></div></div></div><div class="weapon-chip"><span class="weapon-icon" id="weapon-icon">✦</span><div><small>ACTIVE RELIC</small><b id="weapon-name">TEA BLASTER</b></div><kbd>Q / E</kbd></div><div class="boss-bar hidden" id="boss-bar"><small id="boss-name">ANCIENT BLOOM</small><div class="boss-track"><div id="boss-fill"></div></div></div></div>
+      <div id="touch-controls" class="touch-controls"><div class="touch-group"><button data-control="left">◀</button><button data-control="right">▶</button></div><div class="touch-group action-group"><button data-control="dash">DASH</button><button data-control="parry">PARRY</button><button data-control="jump" class="jump-button">JUMP</button><button data-control="fire" class="fire-button">FIRE</button><button data-control="special" class="special-button">ULT</button></div></div>
+      <div class="game-tip" id="game-tip">JUMP TWICE TO REACH THE HIGH PATH</div>
+    </div>
+    <div class="scanlines" aria-hidden="true"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
